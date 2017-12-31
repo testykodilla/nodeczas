@@ -1,7 +1,4 @@
 process.stdin.setEncoding('utf-8');
-function zadanie() {
-
-}
 process.stdin.on('readable', function() {
 	var input = process.stdin.read();
 	if(input !== null) {
@@ -9,10 +6,11 @@ process.stdin.on('readable', function() {
 			if(instrukcja === "/exit") {
 				process.stdout.write('zamykam');
 				process.exit();
+			} else if(instrukcja === "/ver") {
+				process.stdout.write(" Wersja node.js: " + process.versions.node);				
+			} else if (instrukcja === "/lang") {
+				process.stdout.write(" Ustawienia języka: " + process.env.LANG);			
 			} else {
-				process.stderr.write('co ty piszesz?')
-				process.stdout.write(" Wersja node.js: " + process.versions.node);
-				process.stdout.write(" Ustawienia języka: " + process.env.LANG);
-			}
-	}
-});
+				process.stderr.write('co ty piszesz?');
+			};
+	}});
