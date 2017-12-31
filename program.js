@@ -11,8 +11,8 @@ process.stdin.on('readable', function() {
 				process.exit();
 			} else {
 				process.stderr.write('co ty piszesz?')
-				process.stdout.write(process.versions.node);
-				process.stdout.write(process.env.LANG);
+				process.stdout.write(" Wersja node.js: " + process.versions.node);
+				process.stdout.write(" Ustawienia języka: " + process.env.LANG);
 			}
 	}
 });
