@@ -1,3 +1,5 @@
+var osinfo = require('../modules/osinfo');
+var czas = require('../modules/czas');
 process.stdin.setEncoding('utf-8');
 process.stdin.on('readable', function() {
 	var input = process.stdin.read();
@@ -13,7 +15,10 @@ process.stdin.on('readable', function() {
 			case "/lang":
 				process.stdout.write(" Ustawienia języka: " + process.env.LANG);
 				break;
+			case "/getOSinfo":
+			osinfo.print();
+			czas.print();
+				break;
 			default :
 				process.stderr.write('co ty piszesz?');
 }}})
-
